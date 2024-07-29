@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <!-- !Inputa yazilan ededlerin 1e kimi duzulusu -->
+    <input type="number" id="inp">
+    <button id="btn" onclick="toxun()">ok</button>
+    <div id="dongu"></div>
+    <script>
+        function toxun() {
+            let inp =document.getElementById('inp').value;
+            let dongu = document.getElementById('dongu');
+            dongu.innerHTML = ''; 
+            for (let i = inp; i >= 1; i--) {
+                if (i > 1) {
+                    dongu.innerHTML += i + ', ';
+                } else {
+                    dongu.innerHTML += i;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

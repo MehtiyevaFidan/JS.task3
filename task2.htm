@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 1den 100e kimi inputa yazilmis artis miqdari ile ededlerin yazilisi -->
+    <input type="number" id="inp" placeholder="eded yazin">
+    <button id="btn" onclick="toxun()">ok</button>
+    <div id="dongu"></div>
+    <script>
+        function toxun() {
+            let inp = +document.getElementById('inp').value;
+            let dongu = document.getElementById('dongu');
+            dongu.innerHTML = ''; 
+            if (inp <= 0) {
+                dongu.innerHTML = 'Zehmet olmasa duzgun eded yazin';
+                return;
+            }
+            for (let i = 1; i <= 100; i += inp) {
+                if (i + inp <= 100) {
+                    dongu.innerHTML += i + ', ';
+                } else {
+                    dongu.innerHTML += i;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ikinci qutuya yazilmiş artiş miqdari ilə, birinci qutuya yazilmiş ədədə qədər saylarin yazilisi -->
+        <input type="number" id="inp1" >
+        <input type="number" id="inp2">
+        <button onclick="toxun()">OK</button>
+        <p id="p"></p> 
+    <script>
+        function toxun() {
+            const inp1 = +document.getElementById('inp1').value;
+            const inp2 = +document.getElementById('inp2').value;
+            const p = document.getElementById('p');
+            if (inp1 <= 0 || inp2 <= 0) {
+                p.innerHTML = 'Zehmet olmasa duzgun eded yazin';
+                return;
+            }
+            let kod = "";
+            for (let i = 1; i <= inp1; i += inp2) {
+                if (kod !== "") {
+                    kod += ", ";
+                }
+                kod += i;
+            }
+            p.innerHTML = kod;
+        }
+    </script>
+</body>
+</html>
